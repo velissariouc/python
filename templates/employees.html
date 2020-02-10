@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <button onclick="myFunction()">Click Here</button>
+    <h1>Υπάλληλοι</h1>
+
+    <div class="table-responsive">
+        <table id="mytable" class="table table-bordred table-striped">
+            <thead>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </thead>
+
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+<!-- https://bootsnipp.com/snippets/2P90 -->
+    <script>
+    function myFunction()
+    {
+        let d = new Date();
+        alert("Today's date is " + d);
+        var txt;
+        var r = confirm("Press a button!");
+        if (r == true) {
+          txt = "You pressed OK!";
+        } else {
+          txt = "You pressed Cancel!";
+        }
+    }
+    </script>
+
+{% endblock %}
