@@ -19,7 +19,7 @@ def employeess_page():
     sql = """SELECT * from employees"""
     cursor.execute(sql)
     records = cursor.fetchall()
-    return  render_template('employees.html',  title='Υπάλληλοι', rows=records)
+    return  render_template('employees.html',  title='Υπάλληλοι', rows='records')
 
 @app.route('/addemployee/', methods=["GET"])
 def addemployee_get_page():
