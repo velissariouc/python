@@ -1,16 +1,30 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
 
     <div class="container">
 		<br>
 		<h1>Νέος Υπάλληλος</h1>
 		<br>
-		<form action="" class="form-inline" method="post">
-			<input type="text" class="form-control" placeholder = "Ονομα" name="first" >
-			<input type="text" class="form-control" placeholder = "Επίθετο" name="last" >
-			<input class="btn btn-default" type="submit" value="Αποθήκευση">
-		</form>
+		<form action="" method="post">
+			<div class="form-group">
+			    <label for="first">Όνομα Υπαλλήλου</label>
+			    <input type="text" class="form-control" placeholder = "Ονομα" name="first" id="first" >
+			</div>
+			<div class="form-group">
+			    <label for="first">Επίθετο Υπαλλήλου</label>
+			    <input type="text" class="form-control" placeholder = "Επίθετο" name="last" id="first" >
+			</div>
+			<div class="form-group">
+			    <label for="first">Μισθός Υπαλλήλου</label>
+			    <input type="number" class="form-control" placeholder = "Μισθός" name="salary" id="first" >
+			</div>
+            <div class="form-group">
+			    <label for="first">Τηλέφωνο Υπαλλήλου</label>
+			    <input type="number" class="form-control" placeholder = "Τηλέφωνο" name="phone" id="first" >
+	        </div>
+		<button class="btn btn-primary" type="submit" >Αποθήκευση</button>
+
+	    </form>
 	</div>
 {% endblock %}
