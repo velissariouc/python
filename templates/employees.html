@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
- <button onclick="myFunction()">Click Here</button>
-    <h1>���������</h1>
+
+<div><button onclick="window.location.href = '/addemployee'">ΕΙΣΑΓΩΓΗ ΝΕΟΥ ΠΕΛΑΤΗ</button></div>
 
     <div class="table-responsive">
         <table id="mytable" class="table table-bordred table-striped">
@@ -10,6 +10,8 @@
                 <th>ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
+                <th>Salary</th>
+                <th>Telephone</th>
             </thead>
 
             <tbody>
@@ -18,25 +20,35 @@
                     <td>{{ row[0] }}</td>
                     <td>{{ row[1] }}</td>
                     <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>
+                        <td><p data-placement="top" data-toggle="tooltip" title="Delete">
+                            <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="deleteEmployee({{row[0]}})" >
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button></p></td>
+
+
+                    <!--button onclick="deleteEmployee({{row[0]}})">Delete</button></td-->
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
-<!-- https://bootsnipp.com/snippets/2P90 -->
+
+
+
+
     <script>
-    function myFunction()
+    function deleteEmployee(id)
     {
-        let d = new Date();
-        alert("Today's date is " + d);
-        var txt;
-        var r = confirm("Press a button!");
-        if (r == true) {
-          txt = "You pressed OK!";
-        } else {
-          txt = "You pressed Cancel!";
+       var result = confirm('Want to delete?');
+       if (result)
+       {
+           window.location.href = '/deleteemployee?ID=' + id;
         }
     }
-    </script>
 
+    </script>
+<!--https://bootsnipp.com/snippets/2P90 -->
 {% endblock %}
